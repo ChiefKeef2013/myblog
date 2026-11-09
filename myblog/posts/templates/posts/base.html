@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="{% block meta_description %}Личный блог с интересными статьями, новостями и полезными материалами.{% endblock %}">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    
+    <meta property="og:title" content="{% block og_title %}Мой простой блог{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Читайте интересные статьи в моем блоге.{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    
+    <title>{% block title %}Мой блог{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'posts/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'post_list' %}">Главная</a>
+            {% if user.is_authenticated %}
+                <span>Привет, {{ user.username }}!</span>
+                <a href="{% url 'create_post' %}">Добавить пост</a>
+                <a href="{% url 'profile' %}">Профиль</a>
+                <a href="{% url 'logout' %}">Выйти</a>
+            {% else %}
+                <a href="{% url 'login' %}">Войти</a>
+                <a href="{% url 'register' %}">Регистрация</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

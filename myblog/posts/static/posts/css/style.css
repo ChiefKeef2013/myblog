@@ -1,0 +1,191 @@
+body {
+    font-family: 'Georgia', serif;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #faf9f7;
+    color: #333;
+    line-height: 1.7;
+}
+
+header {
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95em;
+    padding: 3px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+nav a:hover {
+    border-bottom-color: #e74c3c;
+}
+
+nav span {
+    color: #888;
+    font-style: italic;
+    margin-left: auto;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0 0 30px 0;
+    color: #2c3e50;
+    font-weight: normal;
+}
+
+h1::before {
+    content: "— ";
+    color: #e74c3c;
+}
+
+article {
+    margin-bottom: 50px;
+    padding: 0 0 0 20px;
+    border-left: 2px solid #e0e0e0;
+    position: relative;
+}
+
+article::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background: #3498db;
+    border-radius: 50%;
+}
+
+article:nth-child(even)::before {
+    background: #e74c3c;
+}
+
+article h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    font-weight: normal;
+}
+
+article h3 a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+article h3 a:hover {
+    color: #e74c3c;
+}
+
+article small {
+    display: block;
+    margin-bottom: 15px;
+    color: #999;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+article p {
+    color: #555;
+    margin: 0 0 15px 0;
+}
+
+article p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: #3498db;
+}
+
+a:hover {
+    color: #e74c3c;
+}
+
+form {
+    background: white;
+    padding: 40px;
+    max-width: 450px;
+    margin: 40px auto;
+    border: 1px solid #e0e0e0;
+}
+
+form p {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 1em;
+    background: #fafafa;
+    box-sizing: border-box;
+}
+
+form textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    background: white;
+}
+
+form button {
+    background: #2c3e50;
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+form button:hover {
+    background: #34495e;
+}
+
+.errorlist {
+    color: #e74c3c;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    font-size: 0.9em;
+}
+
+.helptext {
+    font-size: 0.85em;
+    color: #999;
+    margin-top: 5px;
+    font-style: italic;
+}

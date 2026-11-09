@@ -1,0 +1,21 @@
+{% extends 'posts/base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+{% block og_title %}{{ post.title }}{% endblock %}
+{% block og_description %}{{ post.content|truncatewords:20 }}{% endblock %}
+
+{% block content %}
+<article>
+    <h1>{{ post.title }}</h1>
+    <h2>Автор: {{ post.author.username }} | {{ post.created_at|date:"d.m.Y H:i" }}</h2>
+    
+    <img src="https://via.placeholder.com/700x300" alt="Иллюстрация к статье {{ post.title }}" title="Изображение поста" loading="lazy" width="700" height="300">
+    
+    <p>{{ post.content|linebreaks }}</p>
+    
+    <p>Полезный ресурс: <a href="https://example.com" rel="nofollow" target="_blank">Пример авторитетного источника</a></p>
+    
+    <br>
+    <a href="{% url 'post_list' %}">&larr; Назад к списку статей</a>
+</article>
+{% endblock %}

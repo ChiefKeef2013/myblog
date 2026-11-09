@@ -1,0 +1,9 @@
+{% extends 'posts/base.html' %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+<h1>Профиль</h1>
+<p>Ваш логин: {{ user.username }}</p>
+<p>Ваш email: {{ user.email }}</p>
+{% endblock %}
